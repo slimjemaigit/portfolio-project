@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build Frontend') {
             when {
-                changeset "**/frontend/**"
+                changeset pattern:"**/frontend/**"
             }
             steps {
                 script {
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build Backend') {
             when {
-                changeset "**/backend/**"
+                changeset pattern:"**/backend/**"
             }
             steps {
                 script {
@@ -36,7 +36,7 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             when {
-                changeset "**/frontend/**", "**/backend/**", "**/kubernetes/**"
+                changeset pattern:"**/frontend/**", pattern:"**/backend/**", pattern:"**/kubernetes/**"
             }
             steps {
                 script {
