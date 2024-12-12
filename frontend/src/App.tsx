@@ -25,7 +25,7 @@ const App: React.FC = () => {
         }));
         setCharacters(charactersWithImages);
       } catch (error) {
-        console.error('Error fetching got characters:', error);
+        console.error('Error fetching got characters from db:', error);
       }
     };
 
