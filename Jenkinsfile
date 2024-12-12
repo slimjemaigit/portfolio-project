@@ -37,9 +37,9 @@ pipeline {
         stage('Deploy to Kubernetes') {
             when {
                 anyOf {
-                    changeset: "**/frontend/**"
-                    changeset: "**/backend/**"
-                    changeset: "**/kubernetes/**"
+                    changeset pattern: "**/frontend/**"
+                    changeset pattern: "**/backend/**"
+                    changeset pattern: "**/kubernetes/**"
                       }
                 
             }
