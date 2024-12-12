@@ -36,7 +36,7 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             when {
-                changeset pattern:"**/frontend/**", pattern:"**/backend/**", pattern:"**/kubernetes/**"
+                changeset pattern:"**/frontend/**", "**/backend/**", "**/kubernetes/**"
             }
             steps {
                 script {
